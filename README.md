@@ -39,14 +39,23 @@ Also, created a local python script called schooladdress.py. One of data cleanin
 - To obtain a Civic Information API key plenty of guides are out there to do it, high level overview:
   1. Create a google cloud console login (console.cloud.google.com).
   2. Search for the Civic Information API
+    
     ![Civic Information Search](civic_information_search.png)
+
   3. Enable API
+    
     ![Enable Search API](enable_api.png)
+
   4. Now you need to create credentials, navigate and click "Create Credentials
+    
     ![create credentials](credentials.png)
+
   5. Now select API key
+    
     ![api key](apikey.png)
+
   5. You should see a screen saying API key created, make sure to save your key somewhere safe. 
+    
     ![successfully created](success.png)
 
 - Specifically we will be using the voterInfoQuery to pull polling locations using the school addresses we aggregated and are now in the master_school_address.csv.

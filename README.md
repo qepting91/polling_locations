@@ -1,7 +1,26 @@
 # polling_locations
 
 ## Project Structure
-polling_locations/ ├── data/ │ ├── Aggregated_github_data.csv │ ├── master_school_address.csv │ └── final_polling_locations.csv ├── images/ │ ├── civic_information_search.png │ ├── enable_api.png │ ├── credentials.png │ ├── apikey.png │ └── success.png ├── school_data/ │ ├── us-public-schools-az.csv │ ├── us-public-schools-co.csv │ └── ... ├── .env ├── example.env ├── polling.py ├── schooladdress.py └── README.md
+polling_locations/
+├── data/
+│ ├── Aggregated_github_data.csv
+│ ├── master_school_address.csv
+│ └── final_polling_locations.csv
+├── images/
+│ ├── civic_information_search.png
+│ ├── enable_api.png
+│ ├── credentials.png
+│ ├── apikey.png
+│ └── success.png
+├── school_data/
+│ ├── us-public-schools-az.csv
+│ ├── us-public-schools-co.csv
+│ └── ...
+├── .env
+├── example.env
+├── polling.py
+├── schooladdress.py
+└── README.md
 
 ## Aggregated Data
 - The Aggregated_github_data.csv file contains historical polling locations pulled from the following project, https://github.com/PublicI/us-polling-places , predominately 2020, however some states had 2018 data. This master csv was created by copy and pasting the data from the multiple CSVs, a script could have done this quicker, however I underestimated how long it would take at the beginning.

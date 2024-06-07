@@ -31,7 +31,7 @@ The following states were not included in that data, and therefore this reposito
 
 Created a Google Colab notebook to aggregate the address data from the school_data folder. Notebook can be found here: https://colab.research.google.com/drive/1RAgBTiXT-wcIj57Sjr2FDPgku_-GjTB6?usp=sharing 
 
-Also, created a local python script called schooladdress.py. One of data cleaning pieces you will find in the code is the value "BOX DOE" is removed, as this can not be used in the next phase I figured it was best to leave it out.
+Also, created a python script called schooladdress.py. One of data cleaning pieces you will find in the code is the value "BOX DOE" is removed, as this can not be used in the next phase I figured it was best to leave it out.
 
 ## Civic Information API
 - I will be using the Google Civic Information API for this part of the project- https://developers.google.com/civic-information/docs/v2
@@ -40,23 +40,35 @@ Also, created a local python script called schooladdress.py. One of data cleanin
   1. Create a google cloud console login (console.cloud.google.com).
   2. Search for the Civic Information API
     
-    ![Civic Information Search](civic_information_search.png)
+    ![Civic Information Search](images/civic_information_search.png)
 
   3. Enable API
     
-    ![Enable Search API](enable_api.png)
+    ![Enable Search API](images/enable_api.png)
 
   4. Now you need to create credentials, navigate and click "Create Credentials
     
-    ![create credentials](credentials.png)
+    ![create credentials](images/credentials.png)
 
   5. Now select API key
     
-    ![api key](apikey.png)
+    ![api key](images/apikey.png)
 
   5. You should see a screen saying API key created, make sure to save your key somewhere safe. 
     
-    ![successfully created](success.png)
+    ![successfully created](images/success.png)
 
 - Specifically we will be using the voterInfoQuery to pull polling locations using the school addresses we aggregated and are now in the master_school_address.csv.
+
+- The API key is stored in a .env file, this is a good practice to keep your API keys out of your code. I have provided an example.env file simply rename to .env and paste in your api key.
+
+## Make the Call
+
+- The API call to the Google Civic Information API is pretty standard, Google allows the api key to be sent in the URL or as a parameter. I have chosen to send it within the url, however for sensitive information it is better to do it in parameter form. 
+
+- The parameter that the API call is looking for is an address, so from our master_school_address.csv we had to do some formatting to ensure the address was in the format requested by Google. It is sent in the parameters as 'address'. How to send and receive requests is within the Google API documentation. 
+
+- When the JSON is returned, we have to map it to columns that we are going to use for analysis (due to the timing of running the calls, I found that not all addresses returned polling locations. I believe that Google does not have the historical documentation, or this database is kept up to date for this election, and will be updated...it is important that for the most up to date polling information to search approximately 2 weeks before the election). 
+
+- The results are then converted to a dataframe and saved as a csv and saved in the Data folder as final_polling_locations.csv
 

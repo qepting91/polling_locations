@@ -30,7 +30,7 @@ for filename in os.listdir(school_data_folder):
                     addresses.append([address, city, state, zip_code, zip4])
 
 # Create the output CSV file
-output_file = 'master_school_address.csv'
+output_file = 'data/master_school_address.csv'
 
 # Write the addresses to the output CSV file
 with open(output_file, 'w', newline='', encoding='utf-8') as file:

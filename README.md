@@ -6,6 +6,9 @@ polling_locations/
 │ ├── Aggregated_github_data.csv
 │ ├── master_school_address.csv
 │ └── final_polling_locations.csv
+├── GoogleAppsScript/
+│ ├── readme.md
+│ ├── polling_location.js
 ├── images/
 │ ├── civic_information_search.png
 │ ├── enable_api.png
@@ -87,6 +90,11 @@ Also, created a python script called schooladdress.py. One of data cleaning piec
 
 
 - The API key is stored in a .env file, this is a good practice to keep your API keys out of your code. I have provided an example.env file simply rename to .env and paste in your api key.
+
+- For more information check out 
+https://www.votinginfoproject.org/election-coverage
+
+https://www.votinginfoproject.org/projects
 
 ## Make the Call
 
